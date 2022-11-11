@@ -5,8 +5,3 @@ t=a+c
 
 print (t)
 
-asd
-asd
-qwe
-r
-a
