@@ -5,4 +5,8 @@ t=a+c
 
 print (t)
 
-ss
+asd
+asd
+qwe
+r
+a
