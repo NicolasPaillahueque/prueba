@@ -5,21 +5,23 @@ root=Tk()
 root.title("Login")
 root.geometry("300x150")
 root.resizable(width=False, height=False)
-root.config(bg="Blue")
+root.config(bg="lightblue")
 
-usuario=Label(root, text="ingrese nombre de usuario:")
-usuario.pack()
+usuario=Label(root, text="Ingrese Nombre de Usuario:")
+usuario.place(x=1,y=25)
 
 usuario1=StringVar()
 usu=Entry(root, width=30, textvariable=usuario1)
-usu.pack()
+usu.place(x=150,y=25,width=125)
 
-contraseña=Label(root, text="contraseña:")
-contraseña.pack()
+
+contraseña=Label(root, text="Contraseña:")
+contraseña.place(x=1,y=50)
+
 
 contra=StringVar()
 contra1=Entry(root, width=30, textvariable=contra, show="*")
-contra1.pack()
+contra1.place(x=150,y=50,width=125)
 
 def ingresar():
     if usuario1.get()=="programador" and contra.get()=="123456":
@@ -28,7 +30,8 @@ def ingresar():
         root.title("Incorrecto")
 
 bt=Button(root, text="Entrar", command=ingresar)
-bt.pack(side=BOTTOM)
+bt.place(x=125,y=100)
+
 
 
 root.mainloop()
