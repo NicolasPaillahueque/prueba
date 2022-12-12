@@ -2,7 +2,7 @@ import unittest
 
 from unittest.mock import Mock, patch
 
-from mydata import MyData
+from base import MyData
 
 class TestMyData(unittest.TestCase):
 
