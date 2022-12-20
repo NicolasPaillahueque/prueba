@@ -44,9 +44,7 @@ correo = StringVar()
 cuadro_correo = Entry(ventana, textvariable=correo)
 cuadro_correo.pack()
 
-# Creamos un botón para registrar al cliente
 boton_registrar = Button(ventana, text="Registrar")
 boton_registrar.pack()
 
-# Ejecutamos el bucle principal de la ventana
 ventana.mainloop()
