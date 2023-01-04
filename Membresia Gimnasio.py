@@ -1,34 +1,45 @@
 import tkinter as tk
+import tkinter as tk
+import tkinter.messagebox
 
+class App:
+    def __init__(self, master):
+        self.master = master
+        self.init_widgets()
+    
+    def init_widgets(self):
+        # Crea una etiqueta para la fecha
+        self.lbl_date = tk.Label(self.master, text="Membresia:")
+        self.lbl_date.pack()
+        
+        # Crea una lista desplegable para seleccionar la fecha
+        self.dates = ["Anual", "Mensual", "Trimestral", "Semestral"]
+        self.selected_date = tk.StringVar()
+        self.selected_date.set(self.dates[0])
+        self.menu_date = tk.OptionMenu(self.master, self.selected_date, *self.dates)
+        self.menu_date.pack()
+        
+        
+        # Crea una etiqueta para el instructor
+        self.lbl_instructor = tk.Label(self.master, text="Alumno:")
+        self.lbl_instructor.pack()
+        
+        # Crea una lista desplegable para seleccionar el instructor
+        self.instructors = ["Juan", "Pedro", "Ana", "Laura"]
+        self.selected_instructor = tk.StringVar()
+        self.selected_instructor.set(self.instructors[0])
+        self.menu_instructor = tk.OptionMenu(self.master, self.selected_instructor, *self.instructors)
+        self.menu_instructor.pack()
+        
+        # Crea un botón para registrar la clase
+        self.btn_register = tk.Button(self.master, text="Registrar")
+        self.btn_register.pack() 
+        self.btn_register.place(x=100, y=200, height= 50, width= 100)
+    
 
-ventana = tk.Tk()
-ventana.title("Membresías del gimnasio")
-ventana.geometry("400x400")
-
-membresias = {
-    "Mensual": (30, 50),
-    "Trimestral": (90, 120),
-    "Semestral": (180, 200),
-    "Anual": (365, 300),
-}
-
-def mostrar_detalles():
-    membresia_seleccionada = membresia_seleccionada_entry.get()
-    if membresia_seleccionada in membresias:
-        duracion, costo = membresias[membresia_seleccionada]
-        detalles_texto = f"Duración: {duracion} días\nCosto: ${costo}"
-        detalles_label.config(text=detalles_texto)
-    else:
-        detalles_label.config(text="Membresía no válida")
-
-# Crear la lista desplegable de membresías
-membresia_seleccionada_entry = tk.StringVar(ventana)
-membresia_seleccionada_entry.set("Seleccione una membresía")
-opciones_membresias = tk.OptionMenu(ventana, membresia_seleccionada_entry, *membresias.keys())
-opciones_membresias.pack()
-
-# Crear una etiqueta para mostrar los detalles de la membresía seleccionada
-detalles_label = tk.Label(ventana, text="")
-detalles_label.pack()
-
-membresia_seleccionada_entry.trace("w", mostrar_detalles)
+# Crea la ventana principal y la instancia de la aplicación
+root = tk.Tk()
+root.title("Membresia Alumno")
+root.geometry("300x300")
+app = App(root)
+root.mainloop()   
