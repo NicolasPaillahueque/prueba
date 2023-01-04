@@ -1,4 +1,6 @@
 import tkinter as tk
+import tkinter as tk
+import tkinter.messagebox
 
 class App:
     def __init__(self, master):
@@ -40,11 +42,14 @@ class App:
         self.menu_instructor.pack()
         
         # Crea un botón para registrar la clase
-        self.btn_register = tk.Button(self.master, text="Registrar", command=self.register_class)
-        self.btn_register.pack()
+        self.btn_register = tk.Button(self.master, text="Registrar")
+        self.btn_register.pack() 
+        self.btn_register.place(x=100, y=200, height= 50, width= 100)
     
 
 # Crea la ventana principal y la instancia de la aplicación
 root = tk.Tk()
+root.title("Registrar Horario")
+root.geometry("300x300")
 app = App(root)
 root.mainloop()    
